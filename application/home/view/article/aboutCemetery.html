@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{include file="public/title" /}
+	</head>
+	<body>
+		<!--navbar_top 顶部-->
+		{include file="public/header" /}
+	    <!--内容背景-->
+	    <div class="body_minback">
+	    	<div class="contain">
+	    		<!--内容-->
+	    		<div class="contain_com">
+	    			<!-- 面包屑导航 -->
+			        <div class="breadcrumb">
+			            <ul>
+			                <li><a name='flagD' href="/" style="color:#666467;">首页</a></li>
+			                <li>></li>
+			                <li><a href="javascript:void(0)">{$crumbs}</a></li>
+			                <li >></li>
+			                <li><a href="{:url('home/Article/aboutCemetery',array('cid'=>$cate['id']))}">{$cate.name}</a></li>
+			                <li >></li>
+			                <li class="jt"><a href="javascript:void(0)">新闻详情</a></li>
+			            </ul>
+			        </div><!-- 面包屑导航 end -->
+			        <!--内容左-->
+			        <div class="matter_left">
+			        	<!--侧导航-->
+			        	<div class="side_nav">
+			        		<div class="side_navtitle">{$crumbs}</div>
+			        		<div class="side_navlist side_navlheig" id="cem_detail_title">
+			        			<ul>
+			        				{foreach name='category' id='vo'}
+			        					<li tab="{$vo.id}" {if condition="$vo['id'] eq $cate['id']"} class="thistab"{/if}><a href="{:url('home/Article/aboutCemetery',array('cid'=>$vo['id']))}#flagD" >{$vo.name}</a></li>
+			        				{/foreach}
+			        			</ul>
+			        		</div>
+			        	</div><!--侧导航  end-->
+			        	<!--联系方式-->
+			        	{include file="public/contactWay" /}
+			        </div><!--内容左 end-->
+			        <!--内容右-->
+			         <div class="matter_right">
+			         	<ul>
+			         		<!--行业动态详情-->
+			         		<li id="tabcem1" class="cem_details_box">
+			         			<div class="matter_title">{$cate.name}</div>
+			         			<!--行业详情内容-->
+			         			<div class="news_main">
+			         				<h4>{$article.title}</h4>
+			         				{$article.content}
+			         			</div><!--行业详情内容-->
+			         		</li><!--行业动态详情 end -->
+			         	</ul>
+			         </div><!--内容右 end-->
+	    		</div><!--内容 end-->
+	    	</div>
+	    	<!-- 版权 -->
+		    {include file="public/footer" /}
+	    </div><!--内容背景 end-->
+	    {include file="public/linkjs" /}
+	</body>
+</html>

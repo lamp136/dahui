@@ -1,0 +1,12 @@
+1、在host 文件中配置  127.0.0.1 dev.web.com
+2、配置apache 
+<VirtualHost *:80>
+    DocumentRoot "E:/web/public"
+    ServerName dev.web.com
+</VirtualHost>
+<Directory "E:/web/public">
+    AllowOverride ALL
+    Order allow,deny
+    Allow from all
+</Directory>
+3、配置文件：E:/web/application下 config.php

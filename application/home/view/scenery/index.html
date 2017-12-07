@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{include file="public/title" /}
+	</head>
+	<body>
+		<!--navbar_top 顶部-->
+		{include file="public/header" /}
+	    <!--内容背景-->
+	    <div class="body_minback">
+	    	<div class="contain">
+	    		<!--内容-->
+	    		<div class="contain_com">
+	    			<!-- 面包屑导航 -->
+			        <div class="breadcrumb">
+			            <ul>
+			                <li><a name='flagI' href="/" style="color:#666467;">首页</a></li>
+			                <li>></li>
+			                <li><a href="javascript:void(0)">陵园景观</a></li>
+			                <li >></li>
+			                <li class="jt"><a href="javascript:void(0)">{$defaultCate.name}</a></li>
+			            </ul>
+			        </div><!-- 面包屑导航 end -->
+			        <!--内容左-->
+			        <div class="matter_left">
+			        	<!--侧导航-->
+			        	<div class="side_nav">
+			        		<div class="side_navtitle">陵园景观</div>
+			        		<div class="side_navlist" id="cem_detail_title">
+			        			<ul>
+			        				{foreach name='category' id='vo'}
+			        					<li tab="{$vo.id}" data-url="{:url('home/Scenery/getList')}"{if condition="$vo['id'] eq $defaultCate['id']"} class="thistab"{/if}><a href="javascript:void(0)" >{$vo.name}</a></li>
+			        				{/foreach}
+			        			</ul>
+			        		</div>
+			        	</div><!--侧导航  end-->
+			        	<!--联系方式-->
+			        	{include file="public/contactWay" /}
+			        	<!--联系方式 end-->
+			        </div><!--内容左 end-->
+			        <!--内容右-->
+			        <div class="matter_right">
+			        	<div class="news_rightlist">
+				        	<ul>
+				        		<!--福寿园-->
+			        			<li id="tabcem1" class="cem_details_box">
+			        				<div class="matter_title">{$defaultCate.name}<span>景观展示</span></div>
+			        				<!--福寿园列表-->
+			        				<div class="matter_list">
+			        					<ul id='list_box'>
+			        						{foreach name='data' id='v'}
+				        						<li>
+				        							<div class="matter_img"><a name='a' href="{:url('home/Scenery/detail',array('id'=>$v['id']))}#flagD"><img src="{$v.photo}" alt="{$v.sname}" /></a></div>
+				        							<p>{$v.sname}</p>
+				        						</li>		        		
+			        						{/foreach}				
+			        					</ul>
+			        				</div><!--福寿园列表end-->
+			        			</li><!--福寿园  end-->
+			        		</ul>
+			        	</div>
+			        	<!--分页-->	
+						<div class="paging">
+							<ul>
+								
+							</ul>
+						</div><!--分页 end-->
+			        </div><!--内容右 end-->
+			        
+	    		</div><!--内容 end-->
+	    	</div>
+	    	<!-- 版权 -->
+		    {include file="public/footer" /}  
+	    </div><!--内容背景  end-->
+	    {include file="public/linkjs" /}  
+	    <script>
+	   		var pageData = <?php echo json_encode($data);?>;
+	  	</script>
+	    <script type="text/javascript" src="__JS__/scenery.js"></script>
+	   	<script type="text/javascript" src="__JS__/page.js"></script>
+	</body>
+</html>

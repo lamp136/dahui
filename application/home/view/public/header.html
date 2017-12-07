@@ -1,0 +1,75 @@
+<!--右侧电话-->
+     <div class="right_tel">
+        <img src="__IMG__/index-tel.jpg" alt="" />
+    </div>
+<!--右侧电话  end -->
+<!--navbar_top 顶部-->
+<div class="navbar_top">
+	<div class="contain">
+		<div class="navbar_left">
+			<span>欢迎您来到云南大惠陵园官方网站</span>
+		</div>
+		<div class="navbar_right">
+			<ul>
+				<li><a href="javascript:void(0);">服务热线：</a></li>
+				<li><a href="javascript:void(0);">{notempty name="webMessage['web_tel'][0]"}{$webMessage.web_tel.0} {/notempty}</a></li>
+				<li><a href="javascript:void(0);">{notempty name="webMessage['web_tel'][1]"}{$webMessage.web_tel.1} {/notempty}</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!--navbar_top 顶部 end-->
+<!-- 导航 -->
+<div class="nav">
+    <div class="contain">
+        <ul>
+            <li {empty name='flag_head'} class="lineheight" {/empty}>
+                <a href="/">网站首页</a>
+            </li>
+            <li {if condition="$flag_head eq config('about_cemetery')"} class="lineheight" {/if}>
+                <a href="{:url('home/Article/aboutCemetery',array('cid'=>config('about_cemetery')))}"">关于陵园</a>
+            </li>
+            <li {if condition="$flag_head eq config('cemetery_dynaminc')"} class="lineheight" {/if}>
+                <a href="{:url('home/Article/index',array('cid'=>config('cemetery_dynaminc')))}">陵园动态</a>
+            </li>
+            <li {if condition="$flag_head eq 'scenery'"} class="lineheight" {/if}>
+                <a href="{:url('home/Scenery/index')}">陵园景观</a>
+            </li>
+            <li class="nav_img"><img src="__IMG__/index-logo.jpg" alt="" /></li>
+            <li {if condition="$flag_head eq 'tomb'"} class="lineheight" {/if}>
+                <a href="{:url('home/Tomb/index')}">墓型展示</a>
+            </li>
+            <li {if condition="$flag_head eq 'product'"} class="lineheight" {/if}>
+                <a href="{:url('home/Product/index')}">产品服务</a>
+            </li>
+            <li {if condition="$flag_head eq config('news_center')"} class="lineheight" {/if}>
+                <a href="{:url('home/Article/index',array('cid'=>config('news_center')))}">新闻中心</a>
+            </li>
+            <li {if condition="$flag_head eq config('call_me')"} class="lineheight" {/if}>
+                <a href="{:url('home/Article/aboutCemetery',array('cid'=>config('call_me')))}">联系我们</a>
+            </li>
+        </ul>
+    </div><!-- contain End -->
+</div><!-- nav 导航 End -->
+<!--banner部分-->
+<div class="main_visual">
+    <div class="flicking_con">
+        <div class="flicking_inner">
+        	{foreach name='banner' id='vo'} 
+            	<a href="#"></a>
+            {/foreach}
+        </div>
+    </div>
+    <div class="main_image clearfix">
+        <ul>    
+        {foreach name='banner' id='vo'}                
+            <li>
+                <a href="{$vo.link_url}">
+                    <img src="{$vo.images}"></img>
+                </a>
+            </li>       
+        {/foreach}
+        </ul>
+    </div>
+    <a href="javascript:;" id="btn_prev"></a>
+    <a href="javascript:;" id="btn_next"></a>
+</div><!-- main_visual banner部分 End -->
