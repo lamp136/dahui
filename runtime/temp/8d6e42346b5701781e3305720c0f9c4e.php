@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:74:"D:\wamp\www\project\web\public/../application/admin\view\config\index.html";i:1512357491;s:75:"D:\wamp\www\project\web\public/../application/admin\view\public\header.html";i:1511257266;s:75:"D:\wamp\www\project\web\public/../application/admin\view\public\footer.html";i:1511257266;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:74:"D:\wamp\www\project\web\public/../application/admin\view\config\index.html";i:1512701880;s:75:"D:\wamp\www\project\web\public/../application/admin\view\public\header.html";i:1511257266;s:75:"D:\wamp\www\project\web\public/../application/admin\view\public\footer.html";i:1511257266;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -194,7 +194,7 @@
                                             <label class="col-sm-2 control-label">联系电话</label>
                                             <div class="input-group col-sm-4">                                              
                                                 <input type="text" class="form-control" name="config[web_tel]" value="<?php echo $config['web_tel']; ?>">
-                                                <span class="help-block m-b-none"><i class="fa fa-info-circle"></i>多个电话用‘，’号分割如‘010-123，010-234’</span>                                           
+                                                <span class="help-block m-b-none"><i class="fa fa-info-circle"></i>多个电话用‘#’号分割如‘010-123#010-234’</span>                                           
                                             </div>
                                         </div>                                 
                                         <div class="hr-line-dashed"></div>
@@ -215,10 +215,10 @@
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">封面</label>
                                             <div class="input-group col-sm-4">
-                                                <input type="hidden" id="data_photo" name="config[web_photo]" >
+                                                <input type="hidden" id="data_photo" name="config[web_photo]" value="<?php echo $config['web_photo']; ?>">
                                                 <div id="fileList" class="uploader-list" style="float:right"></div>
                                                 <div id="imgPicker" style="float:left">选择图片</div>
-                                                <img id="img_data" height="100px" style="float:left;margin-left: 50px;margin-top: -10px;" onerror="this.src='/static/admin/images/no_img.jpg'" src="<?php echo $config['web_photo']; ?>"/>
+                                                <img id="img_data" width="200px" height="100px" style="float:left;margin-left: 50px;margin-top: -10px;" onerror="this.src='/static/admin/images/no_img.jpg'" src="<?php echo $config['web_photo']; ?>"/>
                                             </div>
                                         </div>
                                         <div class="hr-line-dashed"></div>
@@ -302,6 +302,15 @@
     uploader.on( 'uploadError', function( file ) {
         $( '#'+file.id ).find('p.state').text('上传出错!');
     }); 
+    
+    //修改上传图片透明div的宽高
+    $('.nav-tabs li').click(function(){
+        var tab = $(this).find('a').attr('href');
+        if(tab =='#tab-4'){
+            var c = $('#imgPicker div:eq(1)').css({'width':'83','height':'40'});  
+        }
+    });
+
 </script>
 </body>
 </html>

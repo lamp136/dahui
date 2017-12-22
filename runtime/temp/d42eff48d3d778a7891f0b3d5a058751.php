@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:72:"D:\wamp\www\project\web\public/../application/admin\view\user\index.html";i:1511257266;s:75:"D:\wamp\www\project\web\public/../application/admin\view\public\header.html";i:1511257266;s:75:"D:\wamp\www\project\web\public/../application/admin\view\public\footer.html";i:1511257266;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:72:"D:\wamp\www\project\web\public/../application/admin\view\user\index.html";i:1512697546;s:75:"D:\wamp\www\project\web\public/../application/admin\view\public\header.html";i:1511257266;s:75:"D:\wamp\www\project\web\public/../application/admin\view\public\footer.html";i:1511257266;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -85,25 +85,21 @@
                                 <td>{{d[i].last_login_time}}</td>
                                 <td>{{d[i].real_name}}</td>                                 
                                 <td>
-                                    {{# if(d[i].id!==1){ }}
-                                        {{# if(d[i].status==1){ }}
-                                            <a class="red" href="javascript:;" onclick="user_state({{d[i].id}});">
-                                                <div id="zt{{d[i].id}}"><span class="label label-info">开启</span></div>
-                                            </a>
-                                        {{# }else{ }}
-                                            <a class="red" href="javascript:;" onclick="user_state({{d[i].id}});">
-                                                <div id="zt{{d[i].id}}"><span class="label label-danger">禁用</span></div>
-                                            </a>
-                                        {{# } }}
+                                    {{# if(d[i].status==1){ }}
+                                        <a class="red" href="javascript:;" onclick="user_state({{d[i].id}});">
+                                            <div id="zt{{d[i].id}}"><span class="label label-info">开启</span></div>
+                                        </a>
+                                    {{# }else{ }}
+                                        <a class="red" href="javascript:;" onclick="user_state({{d[i].id}});">
+                                            <div id="zt{{d[i].id}}"><span class="label label-danger">禁用</span></div>
+                                        </a>
                                     {{# } }}
                                 </td>
                                 <td>
-                                    {{# if(d[i].id!==1){ }}
-                                        <a href="javascript:;" onclick="userEdit({{d[i].id}})" class="btn btn-primary btn-outline btn-xs">
-                                            <i class="fa fa-paste"></i> 编辑</a>&nbsp;&nbsp;
-                                        <a href="javascript:;" onclick="userDel({{d[i].id}})" class="btn btn-danger btn-outline btn-xs">
-                                            <i class="fa fa-trash-o"></i> 删除</a>
-                                    {{# } }}    
+                                    <a href="javascript:;" onclick="userEdit({{d[i].id}})" class="btn btn-primary btn-outline btn-xs">
+                                        <i class="fa fa-paste"></i> 编辑</a>&nbsp;&nbsp;
+                                    <a href="javascript:;" onclick="userDel({{d[i].id}})" class="btn btn-danger btn-outline btn-xs">
+                                        <i class="fa fa-trash-o"></i> 删除</a>
                                 </td>
                             </tr>
                             {{# } }}

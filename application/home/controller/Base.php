@@ -20,7 +20,7 @@ class Base extends Controller
         foreach ($config as $k => $v) {
             $webMessage[trim($v['name'])] = $v['value'];
         }
-        $webMessage['web_tel']  = explode('，',$webMessage['web_tel']);
+        $webMessage['web_tel']  = explode('#',$webMessage['web_tel']);
        
         $this->assign('webMessage',$webMessage);
         $this->assign('banner', $banner);

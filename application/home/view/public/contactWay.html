@@ -1,7 +1,7 @@
 <div class="contact">
 	<div class="contact_title">联系方式</div>
 	<div class="contact_list">
-		<div class="contact_img"><img src="__IMG__/jing-img0.jpg" alt="" /></div>
+		<div class="contact_img"><img src="{$webMessage.web_photo}" alt="" /></div>
 		<p>电话：<span>{notempty name="webMessage['web_tel'][0]"}{$webMessage.web_tel.0} {/notempty}</span><br><span style="margin-left: 35px;">{notempty name="webMessage['web_tel'][1]"}{$webMessage.web_tel.1}{/notempty}</span></p>
 		<p>邮箱：<span>{$webMessage.web_email}</span></p>
 		<p>网址：<span>{$webMessage.web_url}</span></p>

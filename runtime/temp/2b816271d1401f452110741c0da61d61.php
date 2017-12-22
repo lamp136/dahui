@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:72:"D:\wamp\www\project\web\public/../application/home\view\index\index.html";i:1512632985;s:73:"D:\wamp\www\project\web\public/../application/home\view\public\title.html";i:1512460328;s:74:"D:\wamp\www\project\web\public/../application/home\view\public\header.html";i:1512633002;s:74:"D:\wamp\www\project\web\public/../application/home\view\public\footer.html";i:1512468369;s:74:"D:\wamp\www\project\web\public/../application/home\view\public\linkjs.html";i:1512110520;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:72:"D:\wamp\www\project\web\public/../application/home\view\index\index.html";i:1512632985;s:73:"D:\wamp\www\project\web\public/../application/home\view\public\title.html";i:1512460328;s:74:"D:\wamp\www\project\web\public/../application/home\view\public\header.html";i:1512633002;s:74:"D:\wamp\www\project\web\public/../application/home\view\public\footer.html";i:1512697646;s:74:"D:\wamp\www\project\web\public/../application/home\view\public\linkjs.html";i:1512110520;}*/ ?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -275,7 +275,7 @@
         <li><a href="<?php echo url('home/Article/aboutCemetery',array('cid'=>config('call_me'))); ?>">联系我们</a></li>
     </ul>
     <p class="copyright_fon">服务热线：<span><?php if(!(empty($webMessage['web_tel'][0]) || (($webMessage['web_tel'][0] instanceof \think\Collection || $webMessage['web_tel'][0] instanceof \think\Paginator ) && $webMessage['web_tel'][0]->isEmpty()))): ?><?php echo $webMessage['web_tel']['0']; endif; ?></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><?php if(!(empty($webMessage['web_tel'][1]) || (($webMessage['web_tel'][1] instanceof \think\Collection || $webMessage['web_tel'][1] instanceof \think\Paginator ) && $webMessage['web_tel'][1]->isEmpty()))): ?><?php echo $webMessage['web_tel']['1']; endif; ?></span></p>
-    <p><?php echo $webMessage['web_site_icp']; ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $webMessage['web_site_cnzz']; ?>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">91搜墓网版权所有</a></p>
+    <p><?php echo $webMessage['web_site_icp']; ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $webMessage['web_site_cnzz']; ?>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">91搜墓网版权所有</a></p>
     <p><?php echo $webMessage['web_site_copy']; ?></p>
 </div><!-- copyright版权结束 -->
 <!-- toolbar返回顶部工具条-->
